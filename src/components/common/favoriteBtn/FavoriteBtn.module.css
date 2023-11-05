@@ -1,0 +1,11 @@
+.favorite-btn {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 90%;
+}
+.favorite-btn.remove {
+  background-image: none;
+  background-color: rgb(141, 6, 6);
+}

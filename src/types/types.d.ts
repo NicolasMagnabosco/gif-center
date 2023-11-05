@@ -1,12 +1,13 @@
-export interface GIF_OBJECT {
+export interface GifObject {
   title: string;
   id: string;
-  fullsize_url: string;
-  smallsize_url: string;
-  alt: string;
+  full_url: string;
 }
 
-export interface CONTEXT_TYPE {
-  currentGif: string | null;
-  updateCurrentGif: (id: string) => void;
+export interface FavoritesCtxObject {
+  favorites: Array<GIF_OBJECT> | null;
+  addFavorite: (gif: GIF_OBJECT) => void;
+  removeFavorite: (id: string) => void;
+  isFavorite: (id: string) => boolean;
+  clearFavorites: () => void;
 }

@@ -1,21 +1,20 @@
-import { GIF_OBJECT } from "@/types/types";
+import { GifObject } from "@/types/types";
 
 export default function giphyService(
   query: string
-): Promise<Array<GIF_OBJECT>> | null {
+): Promise<Array<GifObject>> | null {
   const URL = "https://api.giphy.com/v1/gifs/search";
-  const KEY = "VL3P7JQWmJg1CnrVKqqpDHWjGdgueRYH";
+  const KEY = process.env.NEXT_PUBLIC_GIPHY_KEY;
   if (query !== "")
-    return fetch(`${URL}?api_key=${KEY}&q=${query}&limit=6`)
+    return fetch(`${URL}?api_key=${KEY}&q=${query}&limit=9`)
       .then((res) => res.json())
       .then((res) =>
         res.data.map((gif: any) => {
           return {
             id: gif.id,
             title: gif.title,
-            alt: gif.alt,
-            smallsize_url: gif.images.fixed_width.url,
-            fullsize_url: gif.images.original,
+            full_url: gif.images.fixed_width.url,
+            preview_url: gif.images.preview_gif.url,
           };
         })
       )

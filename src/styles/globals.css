@@ -13,14 +13,10 @@
   --bkgr-img: linear-gradient(90deg, #1cb5e0 0%, #000851 100%);
   --bttn-img: linear-gradient(90deg, #0f78da 0%, #92fe9d 100%);
   --active-bttn-img: linear-gradient(90deg, #0f78da6c 0%, #92fe9d76 100%);
-}
-
-body {
-  font-family: var(--ff);
-  color: white;
-  width: 100vw;
-  min-height: 100vh;
-  background-image: var(--bkgr-img);
+  --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  --gif-img: linear-gradient(43deg, #00000048 0%, #20202248 46%, #727272 100%);
 }
 
 .loading-spinner {
@@ -29,6 +25,7 @@ body {
   width: 80px;
   height: 80px;
 }
+
 .loading-spinner div {
   box-sizing: border-box;
   display: block;

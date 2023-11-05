@@ -3,12 +3,12 @@ import React from "react";
 // style
 import css from "./Search.module.css";
 
-interface PROPS {
+interface Props {
   handleSearch: () => void;
   updateInputValue: (value: string) => void;
 }
 
-export default function Search({ handleSearch, updateInputValue }: PROPS) {
+export default function Search({ handleSearch, updateInputValue }: Props) {
   return (
     <div className={css.container}>
       <input
@@ -16,7 +16,7 @@ export default function Search({ handleSearch, updateInputValue }: PROPS) {
         className={css.input}
         type="text"
       />
-      <button onClick={handleSearch} className="button">
+      <button onClick={handleSearch} className={`button ${css["search-btn"]}`}>
         Search
       </button>
     </div>
