@@ -6,6 +6,7 @@ import { GifObject } from "@/types/types";
 // constants
 import { GIFS_KEY } from "../constants/constants";
 // services
+// services
 import giphyService from "@/services/giphyService";
 // style
 import css from "./HomePage.module.css";

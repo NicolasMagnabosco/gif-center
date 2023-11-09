@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 // router
 import { useRouter } from "next/router";
 // types
-import { FAVORITES_CTX, GIF_OBJECT } from "@/types/types";
+import { FavoritesCtxObject, GifObject } from "@/types/types";
 // components
 import ArrowSVG from "@/components/common/svg/ArrowSVG";
 import FavoriteBtn from "@/components/common/favoriteBtn/FavoriteBtn";
@@ -15,9 +15,9 @@ import css from "./GifPage.module.css";
 export default function GifPage() {
   const { favorites, isFavorite, removeFavorite, addFavorite } = useContext(
     FavoritesCtx
-  ) as FAVORITES_CTX;
+  ) as FavoritesCtxObject;
   const [idQuery, SetIdQuery] = useState<string | null>(null);
-  const [gif, setGif] = useState<GIF_OBJECT | null>(null);
+  const [gif, setGif] = useState<GifObject | null>(null);
   const router = useRouter();
 
   useEffect(() => {
