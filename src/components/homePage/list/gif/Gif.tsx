@@ -19,8 +19,8 @@ export default function Gif({ gif }: { gif: GifObject }) {
     FavoritesCtx
   ) as FavoritesCtxObject;
 
-  const handleFavorite = () => {
-    if (isFavorite(gif.id)) removeFavorite(gif.id);
+  const handleFavorite = (isFav: boolean) => {
+    if (isFav) removeFavorite(gif.id);
     else addFavorite(gif);
   };
 

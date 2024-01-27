@@ -8,13 +8,13 @@ import css from "./FavoriteBtn.module.css";
 
 interface PROPS {
   isFav: boolean;
-  handleFavorite: () => void;
+  handleFavorite: (isFav: boolean) => void;
 }
 
 export default function FavoriteBtn({ isFav, handleFavorite }: PROPS) {
   return (
     <button
-      onClick={handleFavorite}
+      onClick={() => handleFavorite(isFav)}
       className={`button ${css["favorite-btn"]} ${isFav && css.remove}`}
     >
       {isFav ? (

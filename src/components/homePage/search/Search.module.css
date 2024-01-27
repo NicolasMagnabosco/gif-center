@@ -16,6 +16,9 @@
 .input:focus {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.search-btn {
+  margin-left: 0.5em;
+}
 
 @media (max-width: 650px) {
   .input {

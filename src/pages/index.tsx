@@ -1,5 +1,5 @@
 // react
-import React from "react";
+import React, { FormEvent } from "react";
 import { useEffect, useState } from "react";
 // types
 import { GifObject } from "@/types/types";
@@ -25,7 +25,8 @@ export default function HomePage() {
     if (recentGifs) setGifs(JSON.parse(recentGifs));
   }, []);
 
-  const handleSearch = () => {
+  const handleSubmit = (ev: FormEvent<HTMLFormElement>) => {
+    ev.preventDefault();
     const fetchGifs = async () => {
       setIsLoading(true);
       const fetchedGifs = await giphyService(inputValue);
@@ -51,7 +52,7 @@ export default function HomePage() {
           <h1 className={css.heading}>THE GIF CENTER</h1>
           <Search
             updateInputValue={updateInputValue}
-            handleSearch={handleSearch}
+            handleSubmit={handleSubmit}
           />
         </header>
         <main className={css.main}>
