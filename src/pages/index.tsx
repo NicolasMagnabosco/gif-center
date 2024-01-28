@@ -6,8 +6,9 @@ import { GifObject } from "@/types/types";
 // constants
 import { GIFS_KEY } from "../constants/constants";
 // services
-// services
 import giphyService from "@/services/giphyService";
+//DOMPurify (to sanitize the input)
+import { sanitize } from "dompurify";
 // style
 import css from "./HomePage.module.css";
 // components
@@ -29,7 +30,7 @@ export default function HomePage() {
     ev.preventDefault();
     const fetchGifs = async () => {
       setIsLoading(true);
-      const fetchedGifs = await giphyService(inputValue);
+      const fetchedGifs = await giphyService(sanitize(inputValue));
       if (fetchedGifs) {
         setGifs(fetchedGifs);
         window.sessionStorage.setItem(GIFS_KEY, JSON.stringify(fetchedGifs));
